@@ -19,12 +19,27 @@ jobs:
     
      
     - name: check hostname
-      run: hostname && pwd 
+      run: hostname 
       
     - name: create directory
-      run: mkdir Data && cd Data && pwd
+      run: mkdir ~/Data && cd Data && pwd
       
     - name : create multiple files into Data file
-      run: touch file{1...10}.txt  && pwd    
+      run: touch file{1..10}.txt  
+      
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: self-hosted
+    steps:
+     
+    - name: Download artifact
+      uses: actions/checkout@v2
+      with:
+        name: production-files deploy
+        path: mkdir -p /pro-data  && cp -r ~/Data/* /pro-data
+        
+    
+    
     
    
