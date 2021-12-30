@@ -1,0 +1,17 @@
+name: simple workflow
+on: public
+
+jobs:
+  job_1:
+    name: create a dir
+    runs-on: sainiji
+    steps:
+      - name: Create a Directory
+        run:  mkdir host
+      - name: permission
+        run:  chmod 777 host
+      - name:  create files
+        run: touch file{1...10} 
+        
+       
+         
