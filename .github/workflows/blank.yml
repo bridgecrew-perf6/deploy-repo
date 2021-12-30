@@ -1,6 +1,5 @@
 name: simple workflow
-on: public
-
+on: commit_comment
 jobs:
   job_1:
     name: create a dir
