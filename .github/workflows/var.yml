@@ -3,16 +3,20 @@ name: Variables
 on:
   push:
     branches: [main]
+
+env:
+  BUILD_CONFIGURATION: Release
+
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - name: First script from job1
-        run: echo We use the global workflow variable $VAR_FIRST
+        run: echo We use the global workflow variable $BUILD_CONFIGURATION
 
   job2:
     needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: First script from job2
-        run: echo And here again we use the same workflow variable $VAR_FIRST
+        run: echo And here again we use the same workflow variable $BUILD_CONFIGURATION
