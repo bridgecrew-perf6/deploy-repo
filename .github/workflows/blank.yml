@@ -19,12 +19,12 @@ jobs:
     
      
     - name: check hostname
-      run: hostname
+      run: hostname && pwd 
       
     - name: create directory
-      run: mkdir Data && cd Data
+      run: mkdir Data && cd Data && pwd
       
     - name : create multiple files into Data file
-      run: touch file{1...10}.txt      
+      run: touch file{1...10}.txt  && pwd    
     
    
