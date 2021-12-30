@@ -22,7 +22,10 @@ jobs:
       run: hostname 
       
     - name: create directory
-      run: mkdir ~/Data && cd Data && pwd
+      run: mkdir ~/Data 
+      
+    - name: create directory
+      run: cd Data && pwd
       
     - name : create multiple files into Data file
       run: touch file{1..10}.txt  
