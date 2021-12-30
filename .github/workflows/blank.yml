@@ -28,7 +28,7 @@ jobs:
       run: cd Data && pwd
       
     - name : create multiple files into Data file
-      run: touch file{1..10}.txt  
+      run: touch file{1..8}.txt  
       
   deploy:
     name: Deploy
