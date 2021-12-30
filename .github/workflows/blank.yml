@@ -25,7 +25,7 @@ jobs:
       run: mkdir ~/Data 
       
     - name: create directory
-      run: cd Data && pwd
+      run: cd ~/Data && pwd
       
     - name : create multiple files into Data file
       run: touch file{1..8}.txt  
@@ -40,7 +40,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         name: production-files deploy
-        path: mkdir -p /pro-data  && cp -r ~/Data/* /pro-data
+        path: mkdir  /pro-data  && cp -r ~/Data/* /pro-data
         
     
     
